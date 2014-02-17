@@ -1,7 +1,7 @@
 {
     "name": "solidshops/solidshops-api-php",
     "type": "library",
-    "description": "solidshops php api library",
+    "description": "SolidShops PHP API wrapper library",
     "keywords": ["solidshops","php","api"],
      "autoload": {
         "psr-0": { "SolidShopsApi": "src/" }
