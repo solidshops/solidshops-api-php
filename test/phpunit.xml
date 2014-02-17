@@ -1,0 +1,11 @@
+<phpunit
+    bootstrap="Bootstrap.php"
+    colors="true"
+    testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+    backupGlobals="false" >
+    <testsuites>
+        <testsuite name="SolidShopsApi">
+            <directory suffix=".php">SolidShopsApi</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
