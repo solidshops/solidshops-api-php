@@ -51,7 +51,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_pages>get ( 1 );
+$obj_jsonresponse = $obj_pages->get ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -79,7 +79,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_pages>uupdate ( $id_to_update, '{
+$obj_jsonresponse = $obj_pages->update ( $id_to_update, '{
 	"name": "a page name",
 	"content": "the second content of the page",
 	"active": 1
@@ -95,7 +95,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_pages>delete ( 1 );
+$obj_jsonresponse = $obj_pages->delete ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -121,7 +121,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_products>get ( 1 );
+$obj_jsonresponse = $obj_products->get ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -147,7 +147,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_orders>get ( 1 );
+$obj_jsonresponse = $obj_orders->get ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -173,7 +173,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_categories>get ( 1 );
+$obj_jsonresponse = $obj_categories->get ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
