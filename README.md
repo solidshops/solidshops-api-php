@@ -22,6 +22,7 @@ You can create your authentication object once and pass it to the constructor of
 ```php
 
 $obj_auth = new \SolidShopsApi\Http\Auth\BasicAuthentication ( "apikey", "apipassword" );
+
 $obj_products = new \SolidShopsApi\Services\Products ( $obj_auth );
 $obj_pages = new \SolidShopsApi\Services\Pages ( $obj_auth );
 $obj_orders = new \SolidShopsApi\Services\Orders ( $obj_auth );
@@ -44,7 +45,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 #####get
@@ -57,7 +57,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 #####create
@@ -74,7 +73,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 #####update
@@ -91,7 +89,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 #####delete
@@ -104,7 +101,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 ###Products
@@ -119,7 +115,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 #####get
@@ -132,7 +127,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 ###Orders
@@ -147,7 +141,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 #####get
@@ -160,7 +153,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 ###Categories
@@ -175,7 +167,6 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
 
 #####get
@@ -188,5 +179,4 @@ if ($obj_jsonresponse->getSuccess ()) {
 } else {
 	var_dump($obj_jsonresponse->getErrors ());
 }
-
 ```
