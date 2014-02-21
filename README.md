@@ -17,7 +17,7 @@ You can [download the latest version](http://github.com/solidshops/solidshops-ap
 
 
 ##Authorisation
-You can create your authentication object once and pass it to the constructor of each object.
+You can create an authentication object once and pass it to the constructor of each class.
 
 ```php
 
