@@ -55,9 +55,9 @@ class Request
 		return $this->request('GET', $url);
 	}
 
-	public function post($url, $vars = array(), $port = null)
+	public function post($url, $vars = array())
 	{
-		return $this->request('POST', $url, $vars, $port);
+		return $this->request('POST', $url, $vars);
 	}
 
 	public function put($url, $vars = array())
@@ -70,7 +70,7 @@ class Request
 		return $this->request('DELETE', $url, $vars);
 	}
 
-	private function request($method, $url, $vars = null, $port = null)
+	private function request($method, $url, $vars = null)
 	{
 		$this->request = \curl_init();
 
@@ -78,9 +78,7 @@ class Request
 			$this->addHeader('Content-Length', strlen($vars));
 		}
 
-		if($port){
-			$this->addOption('CURLOPT_PORT', $port);
-		}
+
 
 		switch (strtoupper($method)) {
 			case 'HEAD' :
@@ -114,7 +112,6 @@ class Request
 		}
 
 		curl_close($this->request);
-
 		return $response;
 	}
 
