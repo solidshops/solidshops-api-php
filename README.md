@@ -180,3 +180,73 @@ if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getErrors ());
 }
 ```
+
+###Pages
+
+#####getlist
+
+```php
+
+$obj_jsonresponse = $obj_pages->getlist ( $arr_filter );
+if ($obj_jsonresponse->getSuccess ()) {
+	var_dump($obj_jsonresponse->getData ());
+} else {
+	var_dump($obj_jsonresponse->getErrors ());
+}
+```
+
+#####get
+
+```php
+
+$obj_jsonresponse = $obj_pages->get ( 1 );
+if ($obj_jsonresponse->getSuccess ()) {
+	var_dump($obj_jsonresponse->getData ());
+} else {
+	var_dump($obj_jsonresponse->getErrors ());
+}
+```
+
+#####create
+
+```php
+
+$obj_jsonresponse = $obj_pages->create ( '{
+	"name": "a page name",
+	"content": "the first content of the page",
+	"active": 1
+}' );
+if ($obj_jsonresponse->getSuccess ()) {
+	var_dump($obj_jsonresponse->getData ());
+} else {
+	var_dump($obj_jsonresponse->getErrors ());
+}
+```
+
+#####update
+
+```php
+
+$obj_jsonresponse = $obj_pages->update ( $id_to_update, '{
+	"name": "a page name",
+	"content": "the second content of the page",
+	"active": 1
+}' );
+if ($obj_jsonresponse->getSuccess ()) {
+	var_dump($obj_jsonresponse->getData ());
+} else {
+	var_dump($obj_jsonresponse->getErrors ());
+}
+```
+
+#####delete
+
+```php
+
+$obj_jsonresponse = $obj_pages->delete ( 1 );
+if ($obj_jsonresponse->getSuccess ()) {
+	var_dump($obj_jsonresponse->getData ());
+} else {
+	var_dump($obj_jsonresponse->getErrors ());
+}
+```
