@@ -27,6 +27,7 @@ $obj_products = new \SolidShopsApi\Services\Products ( $obj_auth );
 $obj_pages = new \SolidShopsApi\Services\Pages ( $obj_auth );
 $obj_orders = new \SolidShopsApi\Services\Orders ( $obj_auth );
 $obj_categories = new \SolidShopsApi\Services\Categories ( $obj_auth );
+$obj_webhooks = new \SolidShopsApi\Services\Webhooks ( $obj_auth );
 
 ```
 
@@ -187,7 +188,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_webhook->getlist ( $arr_filter );
+$obj_jsonresponse = $obj_webhooks->getlist ( $arr_filter );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -199,7 +200,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_webhook->get ( 1 );
+$obj_jsonresponse = $obj_webhooks->get ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -211,7 +212,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_webhook->create ( '{
+$obj_jsonresponse = $obj_webhooks->create ( '{
 	"name": "a page name",
 	"content": "the first content of the page",
 	"active": 1
@@ -227,7 +228,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_webhook->update ( $id_to_update, '{
+$obj_jsonresponse = $obj_webhooks->update ( $id_to_update, '{
 	"name": "a page name",
 	"content": "the second content of the page",
 	"active": 1
@@ -243,7 +244,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_webhook->delete ( 1 );
+$obj_jsonresponse = $obj_webhooks->delete ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
