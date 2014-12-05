@@ -181,13 +181,13 @@ if ($obj_jsonresponse->getSuccess ()) {
 }
 ```
 
-###Pages
+###Webhooks
 
 #####getlist
 
 ```php
 
-$obj_jsonresponse = $obj_pages->getlist ( $arr_filter );
+$obj_jsonresponse = $obj_webhook->getlist ( $arr_filter );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -199,7 +199,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_pages->get ( 1 );
+$obj_jsonresponse = $obj_webhook->get ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
@@ -211,7 +211,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_pages->create ( '{
+$obj_jsonresponse = $obj_webhook->create ( '{
 	"name": "a page name",
 	"content": "the first content of the page",
 	"active": 1
@@ -227,7 +227,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_pages->update ( $id_to_update, '{
+$obj_jsonresponse = $obj_webhook->update ( $id_to_update, '{
 	"name": "a page name",
 	"content": "the second content of the page",
 	"active": 1
@@ -243,7 +243,7 @@ if ($obj_jsonresponse->getSuccess ()) {
 
 ```php
 
-$obj_jsonresponse = $obj_pages->delete ( 1 );
+$obj_jsonresponse = $obj_webhook->delete ( 1 );
 if ($obj_jsonresponse->getSuccess ()) {
 	var_dump($obj_jsonresponse->getData ());
 } else {
