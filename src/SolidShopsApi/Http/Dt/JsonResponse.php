@@ -45,7 +45,10 @@ class JsonResponse
     {
         return $this->data;
     }
-
+    public function getDataAsArray()
+    {
+        return json_decode(json_encode($this->data), true);
+    }
   
     public function setErrors($arr_errors)
     {
