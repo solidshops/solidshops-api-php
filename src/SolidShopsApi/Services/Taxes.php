@@ -2,7 +2,7 @@
 
 namespace SolidShopsApi\Services;
 
-class Shipping extends \SolidShopsApi\Services\Base {
+class Taxes extends \SolidShopsApi\Services\Base {
 	protected $_entity = "shipping";
 
 	public function getlist($arr_option = null) {
