@@ -13,7 +13,7 @@ class Carts extends \SolidShopsApi\Services\Base {
 		return parent::get($cartId);
 	}
 
-	public function create($input) {
+	public function create($input=null) {
 		$api_endpoint = "/" . $this->_entity;
 		
 		$obj_response = $this->httpPost ( $api_endpoint ,$input);
