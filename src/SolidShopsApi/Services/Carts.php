@@ -5,9 +5,7 @@ namespace SolidShopsApi\Services;
 class Carts extends \SolidShopsApi\Services\Base {
 	protected $_entity = "carts";
 
-	public function getlist($arr_option = null) {
-		return parent::getlist($arr_option);
-	}
+
 
 	public function get($cartId) {
 		return parent::get($cartId);
@@ -21,6 +19,21 @@ class Carts extends \SolidShopsApi\Services\Base {
 		$obj_jsonresponse = $obj_response->toJsonResponse ();
 		
 		return $obj_jsonresponse;
+	}
+	
+	public function update($cartId,$input) {
+		$api_endpoint = "/" . $this->_entity."/".$cartId;
+		
+		$obj_response = $this->httpPut ( $api_endpoint ,$input);
+		
+		$obj_jsonresponse = $obj_response->toJsonResponse ();
+		
+		return $obj_jsonresponse;
+	}
+	
+	/* not implemented
+	public function getlist($arr_option = null) {
+		return parent::getlist($arr_option);
 	}
 	
 	public function addItem($cartId,$input) {
@@ -42,15 +55,7 @@ class Carts extends \SolidShopsApi\Services\Base {
 	
 		return $obj_jsonresponse;
 	}
+	*/
 
 
-	public function update($cartId,$input) {
-		$api_endpoint = "/" . $this->_entity."/".$cartId;
-		
-		$obj_response = $this->httpPut ( $api_endpoint ,$input);
-		
-		$obj_jsonresponse = $obj_response->toJsonResponse ();
-		
-		return $obj_jsonresponse;
-	}
 }
