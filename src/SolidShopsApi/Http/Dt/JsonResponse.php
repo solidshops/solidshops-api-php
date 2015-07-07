@@ -9,6 +9,7 @@ class JsonResponse
     protected $succes = false;
     protected $data = null;
     protected $errors = null;
+    protected $pagination = null;
 
 
     public function __construct()
@@ -73,6 +74,17 @@ class JsonResponse
         $arr_return['data'] = $this->getData();
         $arr_return['errors'] = $this->getErrors();
         return $arr_return;
+    }
+    
+    
+    public function setPagination($data)
+    {
+    	$this->pagination = $data;
+    }
+    
+    public function getPagination()
+    {
+    	return $this->pagination;
     }
 
 }

@@ -20,7 +20,7 @@ class Response
 
         # Remove headers from the response body
         $this->body = str_replace($headers_string, '', $response);
-
+		//error_log(print_r($this->body,true) );
         # Extract the version and status from the first header
 //        $version_and_status = array_shift($headers);
 //        preg_match('#HTTP/(\d\.\d)\s(\d\d\d)\s(.*)#', $version_and_status, $matches);
@@ -92,6 +92,10 @@ class Response
     		
     		if(isset($obj_body->errors)){
     			$obj_jsonreponse->setErrors($obj_body->errors);
+    		}
+    		
+    		if(isset($obj_body->pagination)){
+    			$obj_jsonreponse->setPagination($obj_body->pagination);
     		}
     		 
     	}catch (\Exception $e){

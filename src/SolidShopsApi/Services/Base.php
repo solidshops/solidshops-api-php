@@ -13,7 +13,7 @@ class Base extends \SolidShopsApi\Http\ApiRequest {
 		}
 		
 		$obj_response = $this->httpGet ( $api_endpoint );
-		
+		//error_log(print_r($api_endpoint,true));
 		$obj_jsonresponse = $obj_response->toJsonResponse ();
 		
 		return $obj_jsonresponse;
@@ -23,7 +23,7 @@ class Base extends \SolidShopsApi\Http\ApiRequest {
 		$api_endpoint = "/" . $this->_entity."/".$id;
 
 		$obj_response = $this->httpGet ( $api_endpoint );
-		
+		//error_log(print_r($obj_response,true));
 		$obj_jsonresponse = $obj_response->toJsonResponse ();
 		
 		return $obj_jsonresponse;
