@@ -50,6 +50,10 @@ class JsonResponse
     {
         return json_decode(json_encode($this->data), true);
     }
+    public function getDataAsObject()
+    {
+    	return json_decode(json_encode($this->data), false);
+    }
   
     public function setErrors($arr_errors)
     {
