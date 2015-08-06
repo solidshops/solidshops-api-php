@@ -36,6 +36,8 @@ class ApiRequest
     		$this->_obj_curl->addOption('CURLOPT_HTTPAUTH', CURLAUTH_BASIC);
     	
     	}
+    	
+    	return $this->_obj_curl;
     }
     
     
