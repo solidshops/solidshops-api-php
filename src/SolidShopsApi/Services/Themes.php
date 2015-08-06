@@ -22,6 +22,37 @@ class Themes extends \SolidShopsApi\Services\Base {
 		return $obj_jsonresponse;
 	}
 	
+	public function createFromArchive($file) {
+		$api_endpoint = "/" . $this->_entity;
+	
+		$obj_curl = $this->initCurl();
+	
+		
+		$this->obj_response = null;
+		
+		
+		$obj_curl->addHeader('Content-Type', 'multipart/form-data');
+		$obj_curl->addHeader('Expect', '');
+		 
+		$post = array();
+		
+		 
+		if (version_compare(phpversion(), '5.5.0', '>=')) {
+			$post['assets'] = new \CurlFile($file);
+		}
+		else {
+			$post['assets'] = '@' . $file;
+		}
+		
+		
+		$obj_response = $obj_curl->post($this->getUri() . $api_endpoint,$post);
+		
+		
+		$obj_jsonresponse = $obj_response->toJsonResponse ();
+	
+		return $obj_jsonresponse;
+	}
+	
 	public function update($id,$input) {
 		$api_endpoint = "/" . $this->_entity."/".$id;
 	
