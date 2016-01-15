@@ -31,12 +31,17 @@ class ApiRequest
     	$this->_obj_curl->addOption('CURLOPT_SSL_VERIFYPEER', false);
     	
     	if($this->_auth instanceof \SolidShopsApi\Http\Auth\BasicAuthentication){
-    	
     		$this->_obj_curl->addOption('CURLOPT_USERPWD', $this->_auth->getUser().":".$this->_auth->getPassword());
     		$this->_obj_curl->addOption('CURLOPT_HTTPAUTH', CURLAUTH_BASIC);
-    	
     	}
     	
+    	if($this->_auth instanceof \SolidShopsApi\Http\Auth\ApiKeyAuthentication){
+    	    $this->_obj_curl->addHeader("X-SolidShops-ApiKey",$this->_auth->getApiKey());
+    	}
+
+    	if($this->_auth instanceof \SolidShopsApi\Http\Auth\OAuth2ClientCredentialsAuthentication){
+    	    $this->_obj_curl->addHeader("Authorization","Bearer " . $this->_auth->getToken());
+    	}
     	return $this->_obj_curl;
     }
     

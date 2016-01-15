@@ -12,6 +12,17 @@ class Products extends \SolidShopsApi\Services\Base {
 		return parent::get($id);
 	}
 	
+	public function test(){
+	    $api_endpoint = "/oauth/test";
+	    //$api_endpoint = "/shops";
+	    
+	    $obj_response = $this->httpGet ( $api_endpoint );
+	    //error_log(print_r($obj_response,true));
+	    $obj_jsonresponse = $obj_response->toJsonResponse ();
+	    
+	    return $obj_jsonresponse;
+	}
+	
 	public function create($input) {
 		$api_endpoint = "/" . $this->_entity;
 	
